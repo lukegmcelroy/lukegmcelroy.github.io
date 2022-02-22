@@ -39,7 +39,7 @@ var init = function (window) {
         /*drawCircle();
         //drawCircle();
         //drawCircle();
-        //drawCircle();
+        //drawCircle();//Draws 5 circles
         //drawCircle();
         drawCircle();
         */
@@ -61,7 +61,7 @@ var init = function (window) {
             physikz.updatePosition(circles[2]);
             physikz.updatePosition(circles[3]);
             physikz.updatePosition(circles[4]);
-            physikz.updatePosition(circles[5]);
+            physikz.updatePosition(circles[5]);//Moves my  circles
             physikz.updatePosition(circles[6]);
 
             */
@@ -72,7 +72,7 @@ var init = function (window) {
             game.checkCirclePosition()
             game.checkCirclePosition()
             game.checkCirclePosition()
-            game.checkCirclePosition()
+            game.checkCirclePosition()//Keep my circles in the screen
             game.checkCirclePosition()
             game.checkCirclePosition()
 
@@ -107,6 +107,7 @@ var init = function (window) {
             if ( circle.y > canvas.height ) {
                 circle.y = 0;
             }
+            // Loop from all sides. 
 
             
             // TODO 7 : YOUR CODE STARTS HERE //////////////////////
