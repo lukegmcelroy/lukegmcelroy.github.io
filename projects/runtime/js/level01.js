@@ -27,10 +27,23 @@ var level01 = function (window) {
 
         // TODO 6 and on go here
         // BEGIN EDITING YOUR CODE HERE
+        function cretesawBlade(x,y){
 
-        
-        
-        
+
+        var hitZoneSize = 25;// creates the size the hitzone 
+    var damageFromObstacle = 10;// sets yje damage 
+    var sawBladeHitZone = game.createObstacle(hitZoneSize, damageFromObstacle);// creates the hitzone
+    sawBladeHitZone.x = x;// the x postiton of the hitzone 
+    sawBladeHitZone.y = y;// the y position of the hitzone 
+    game.addGameItem(sawBladeHitZone); // adds thhe hitzone to the game
+    var obstacleImage = draw.bitmap('img/sawblade.png');//Drawing the imge and storing in the variable 
+    sawBladeHitZone.addChild(obstacleImage);// add the image to the hiezone so we can see it     
+     obstacleImege.x = -25 // tweaks the image pixels  the left 
+     obstacleImege.y = -25  //tweaks the image pixels up  
+    }
+    createMyObstacle(400,345);
+    createMyObstacle(600,345);
+    createMyObstacle(800,345);  
         // DO NOT EDIT CODE BELOW HERE
     }
 };

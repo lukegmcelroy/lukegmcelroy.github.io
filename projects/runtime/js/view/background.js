@@ -56,8 +56,15 @@ var background = function (window) {
             background.addChild(moon);//add the moon to the backgroud
             
             // TODO 5: Part 1 - Add buildings!     Q: This is before TODO 4 for a reason! Why?
-           
+            for(var i=0;i<5;++i) {
+                var buildingHeight = 300;
+                var building = draw.rect(75,buildingHeight,'LightGray','Black',1);
+                building.x = 200*i;
+                building.y = groundY-buildingHeight;
+                background.addChild(building);
+                buildings.push(building);
             }
+           
             
             // TODO 4: Part 1 - Add a tree
             tree = draw.bitmap('img/tree.png');
@@ -80,12 +87,18 @@ var background = function (window) {
             
             // TODO 4: Part 2 - Move the tree!
             tree.x = tree.x - 1;// taking the vaalue of tree. x and decreasing by 1 pixel everry time the update function runs. makes it move left.
-            if(tree.x < + 200) {
+            if(tree.x < -200) {
             tree.x = canvasWidth;
             }       
             
             // TODO 5: Part 2 - Parallax
-        
+            // loop the buildings and moves them to the lrft by 0.5 pixles 
+        for (var i = 0; i < buildings.lenght; i++){
+            buildings[i].x = builddings[i].x - 0.5;// moves the biuldings x position by .5 pixels 
+            if (buildings[i].x < 0) {//cheks to see if the buildings s x pos id off ythe left side.
+                buildings[i].x = canasWidth;
+            }
+        }
 
         } // end of update function - DO NOT DELETE
         
@@ -104,7 +117,8 @@ var background = function (window) {
         render();
         return background;
     };
-};
+ };
+
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if((typeof process !== 'undefined') &&
