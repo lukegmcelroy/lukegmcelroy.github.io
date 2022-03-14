@@ -44,7 +44,36 @@ var level01 = function (window) {
     createMyObstacle(400,345);
     createMyObstacle(600,345);
     createMyObstacle(800,345);  
-        // DO NOT EDIT CODE BELOW HERE
+function createsenemy(x,y){
+    var enemy = game.createGameItem('enemy',25);// creating the game item and storing it in the variable enemy
+    var redSquare = draw.rect(50,50,'red');//creates rectangle and stores as redsquare 
+    redSquare.x = -25;
+    redSquare.y = -25;
+    enemy.addChild(redSquare);//add
+
+    enemy.x = 400;
+    enemy.y = groundY-50;
+
+    game.addGameItem(enemy);//adds enemy to the game 
+    enemy.velocityX = -1
+    enemy.rotationalVelocity.x =25;
+   
+    enemy.onPlayerCollision = function() {
+    console.log('The enemy has hit Halle');
+    game.changeIntegrity(-1000);
+
+    enemy.onPlayerCollision = function() {
+        console.log('The enemy has hit Halle');
+        game.changeIntegrity(-1000);
+
+        enemy.fadeOut();
+    };
+}
+creatwEnemy(400,gromd- 50);
+creatwEnemy(100,gromd- 10);
+creatwEnemy(600,gromd- 80);
+
+    // DO NOT EDIT CODE BELOW HERE
     }
 };
 
