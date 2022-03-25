@@ -94,7 +94,7 @@ var background = function (window) {
             // TODO 5: Part 2 - Parallax
             // loop the buildings and moves them to the lrft by 0.5 pixles 
         for (var i = 0; i < buildings.length; i++){
-            buildings[i].x = builddings[i].x - 0.5;// moves the biuldings x position by .5 pixels 
+            buildings[i].x = buildings[i].x - 0.5;// moves the biuldings x position by .5 pixels 
             if (buildings[i].x < 0) {//cheks to see if the buildings s x pos id off ythe left side.
                 buildings[i].x = canvasWidth;
             }
