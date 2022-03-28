@@ -61,6 +61,7 @@ var level01 = function (window) {
             sawBladeHitZone.addChild(obstacleImage);// add the image to the hiezone so we can see it     
             obstacleImage.x = -25 // tweaks the image pixels  the left 
             obstacleImage.y = -25 //tweaks the image pixels up  
+           
         }
    
 function createEnemy(x,y){
@@ -77,7 +78,7 @@ function createEnemy(x,y){
     game.addGameItem(enemy);//adds enemy to the game 
 
     enemy.velocityX = -1
-
+    enemy.rotationalVelocity = 15
    
     enemy.onPlayerCollision = function() {
         console.log('The enemy has hit Halle');
@@ -104,11 +105,11 @@ function createReward(x,y){
     game.addGameItem(reward);//adds reward to the game 
 
     reward.velocityX = -1
-
+   
    
     reward.onPlayerCollision = function() {
         console.log('The reward has hit Halle');
-        game.changeIntegrity(1000);
+        game.changeIntegrity(10);
         reward.shrink();
     }
    
