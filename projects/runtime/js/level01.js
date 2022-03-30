@@ -20,6 +20,11 @@ var level01 = function (window) {
                 { "type": "sawblade", "x": 2190, "y": groundY - 100},
                 { "type": "sawblade", "x": 1200, "y": groundY - 100},
                  { "type": "sawblade", "x": 1690, "y": groundY - 100},
+
+                 { "type": "sawblade", "x": 2400, "y": groundY- 100},
+                { "type": "sawblade", "x": 3190, "y": groundY - 100},
+                { "type": "sawblade", "x": 2200, "y": groundY - 100},
+                 { "type": "sawblade", "x": 2690, "y": groundY - 100},
     
                  { "type": "sawblade", "x": 2400, "y": groundY- 100},
                  { "type": "sawblade", "x": 3190, "y": groundY - 100},
@@ -33,6 +38,9 @@ var level01 = function (window) {
                 { "type": "enemy", "x": 1400, "y": groundY- 50},
                 { "type": "enemy", "x": 1600, "y": groundY - 50},
                 { "type": "enemy", "x": 1900, "y": groundY - 50},
+                { "type": "enemy", "x": 2900, "y": groundY- 50},
+                { "type": "enemy", "x": 1600, "y": groundY - 50},
+                { "type": "enemy", "x": 1400, "y": groundY - 50},
                 
                 { "type": "reward", "x": 700, "y": groundY- 70},
                 { "type": "reward", "x": 100, "y": groundY - 70},
@@ -41,7 +49,12 @@ var level01 = function (window) {
                 { "type": "reward", "x": 1700, "y": groundY- 70},
                 { "type": "reward", "x": 2100, "y": groundY - 70},
                 { "type": "reward", "x": 1300, "y": groundY - 70},
+
+                { "type": "reward", "x": 2700, "y": groundY- 70},
+                { "type": "reward", "x": 3100, "y": groundY - 70},
+                { "type": "reward", "x": 2300, "y": groundY - 70},
             ]
+            
         };
         window.levelData = levelData;
         // set this to true or false depending on if you want to see hitzones
@@ -82,11 +95,11 @@ function createEnemy(x,y){
    
     enemy.onPlayerCollision = function() {
         console.log('The enemy has hit Halle');
-        game.changeIntegrity(10);
+        game.changeIntegrity(-100);
     }
     enemy.onProjectileCollision = function() {
         console.log('The enemy has hit Halle');
-        game.changeIntegrity(-10);
+        game.changeIntegrity(-10);3
         enemy.fadeOut();
     };
 }
@@ -109,7 +122,7 @@ function createReward(x,y){
    
     reward.onPlayerCollision = function() {
         console.log('The reward has hit Halle');
-        game.changeIntegrity(10);
+        game.changeIntegrity(100);
         reward.shrink();
     }
    
